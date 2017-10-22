@@ -1,1 +1,30 @@
-player works
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header" data-background-color="purple">
+                    <h4 class="title">Players</h4>
+                    <p class="category">List of contending players</p>
+                </div>
+                <div class="card-content table-responsive">
+                    <table class="table">
+                        <thead class="text-primary">
+                            <th>Name</th>
+                            <th>Team</th>
+                            <th>Challanges</th>
+                            <th>Skills</th>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let player of players">
+                                <td><a routerLink="/players/{{ player.id }}"></a>{{ player.name }}</td>
+                                <td>{{ player.team }}</td>
+                                <td>{{ player.challanges }}</td>
+                                <td><p *ngFor="let skill of player.skills">{{ skill }}</p></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
